@@ -1,0 +1,26 @@
+
+
+- name: "Update Apt Cache"
+  apt: 
+    update_cache: yes
+  tags: installation
+
+- name: "Upgrade Dist"
+  apt: 
+    upgrade: dist
+  tags: installation
+
+- name: "Install Common packages"
+  apt: name={{ item }} state=latest
+  with_items:
+   - python-pip
+   - docker.io
+   - python3-venv
+   - docker-compose
+  tags: installation, packages
+
+- name: "Python Docker"
+  pip:
+    name: 
+      - docker
+  tags: python

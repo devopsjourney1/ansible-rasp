@@ -1,0 +1,7 @@
+- hosts: control
+  become: yes
+  roles:
+    - common
+  tags:
+    control
+
