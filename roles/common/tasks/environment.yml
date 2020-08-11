@@ -1,7 +1,5 @@
 - name: "Copy aliases"
-  copy: src=.bash_aliases dest="/home/vagrant/.bash_aliases"
-  tags: environment
-
-- name: "Copy bash rc"
-  copy: src=.bashrc dest="/home/vagrant/.bashrc"
-  tags: environment
+  copy: 
+    src=.bash_aliases 
+    dest="/home/pi/.bash_aliases"
+  tags: aliases

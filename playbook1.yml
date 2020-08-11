@@ -1,7 +1,7 @@
-- hosts: control
+- hosts: lab
   become: yes
   roles:
     - common
   tags:
-    control
+    lab
 
