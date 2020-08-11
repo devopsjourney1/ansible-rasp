@@ -1,18 +1,15 @@
-# Ansible Lab 9 - Add the Database Server
 
-We've learned a lot so far. Let's see if we can add the mysql role and get a database up and running.
-
-## Gather ansible facts, these are dynamic variables automatically gathered by ansible
-1. Add python-pip to common installation items.
-2. Create mysql role using ansible-galaxy.
-3. Create tasks and handlers for new mysql role.
-5. Run playbook
-6. Test a mysql connection to database
-
-
+# To Get a List of Playbook Tasks
 ``` shell
-ansible-galaxy init roles/mysql
-ansible-playbook -i inventories/prod -K playbook1.yml --tags database
-ssh db01
-sudo /usr/bin/mysql -u root -p
+ansible-playbook -i inventories/hosts -K playbook1.yml --list-tasks
+```
+
+# To Run all Tasks in Playbook
+```shell
+ansible-playbook -i inventories/hosts -K playbook1.yml
+```
+
+# To Run task with a Specific Tag - Example: Minikube installation
+```shell
+ansible-playbook -i inventories/hosts -K playbook1.yml -t minikube
 ```
