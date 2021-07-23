@@ -1,5 +1,5 @@
 - name: "Copy aliases"
   copy: 
     src=.bash_aliases 
-    dest="/home/pi/.bash_aliases"
+    dest="/home/ubuntu/.bash_aliases"
   tags: aliases
